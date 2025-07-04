@@ -17,21 +17,21 @@ pipeline {
         
         stage('Init') {
             steps {
-                bat 'dir'
-                bat 'terraform init'
+                
+                bat 'cd Practice-1 && terraform init'
             }
         }
 
         stage('Plan') {
             steps {
-                bat 'terraform plan'
+                bat 'cd Practice-1 && terraform plan'
             }
         }
 
         stage('Apply') {
             steps {
                 input "Approve to Apply?"
-                bat 'terraform apply -auto-approve'
+                bat 'cd Practice-1 && terraform apply -auto-approve'
             }
         }
     }
