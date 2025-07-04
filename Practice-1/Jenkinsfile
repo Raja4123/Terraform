@@ -10,7 +10,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/your-org/your-terraform-repo.git'
+                git 'https://github.com/Raja4123/Terraform.git'
+                cd 'Practice-1'
             }
         }
 
