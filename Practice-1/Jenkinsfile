@@ -11,15 +11,10 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/Raja4123/Terraform.git'
-               
+                 bat 'cd Practice-1'
             }
         }
-        stage('pwd'){
-            steps{
-                bat 'pwd'
-            }
-        }
-
+        
         stage('Init') {
             steps {
                 bat 'terraform init'
