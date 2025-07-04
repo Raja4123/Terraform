@@ -11,7 +11,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git 'https://github.com/Raja4123/Terraform.git'
-                cd 'Practice-1'
+                sh 'cd Practice-1'
             }
         }
 
@@ -23,14 +23,14 @@ pipeline {
 
         stage('Plan') {
             steps {
-                sh 'terraform plan -out=tfplan'
+                sh 'terraform plan'
             }
         }
 
         stage('Apply') {
             steps {
                 input "Approve to Apply?"
-                sh 'terraform apply tfplan'
+                sh 'terraform apply -auto-approve'
             }
         }
     }
